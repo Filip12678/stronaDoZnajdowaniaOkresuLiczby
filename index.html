@@ -1,0 +1,71 @@
+﻿<html lang="pl">
+<head>
+
+<title>Strona do obliczania okresu ulamka</title>
+<script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
+
+<style>
+
+.frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    letter-spacing: 0.001em;
+    text-align: center;
+}
+.frac > span {
+    display: block;
+    padding: 0.1em;
+}
+.frac span.bottom {
+    border-top: thin solid black;
+}
+.frac span.symbol {
+    display: none;
+
+
+</style>
+
+</head>
+<body>
+
+
+
+<div class="frac">
+<span><input type="number" id="licznik"/></span>
+<span class="symbol">/</span>
+<span class="bottom"><input type="number" id="mianownik"/></span>
+</div>
+
+<h3><div id="okresUlamka"></div></h3>
+
+
+<script src="skrypt.js"></script>
+<button onclick="myFunction()">Oblicz okres ułamka</button>
+
+
+
+<br><br><br><br>
+Jeżeli w rozkładzie mianownika ułamka nieskracalnego na czynniki pierwsze jedynymi liczbami są 2 i 5 to ułamek ma rozwinięcie dziesiętne <b>skończone</b>.
+<br><br>
+W przeciwnym wypadku musimy skrócić ten ułamek i rozłożyć jego mianownik na czynniki pierwsze i policzyć ile jest w mim 2 a ile 5 i zapamiętujemy większą ilość.
+<br><br>
+Następnie wyrzucamy z rozkładu na czynniki pierwsze 2 i 5 a pozostałe liczby mnożymy. Jeżeli iloczyn pozostałych liczb <b>nie</b> jest liczbą składających się z samych 9 musimy ją do takiej liczby rozszerzyć
+<br><br>
+Np. rozkład liczby 71500 na czynniki pierwsze: 2 2 5 5 5 11 13
+<br><br>
+W rozkładzie są dwie dwójki i trzy piątki więc zapamiętujemy liczbę 3 – ilość liczb przed okresem.
+<br><br>
+Następnie wyrzucamy 2 i 5 i pozostaje nam 11 oraz 13 więc mnożymy te liczby 11 × 13 = 143 teraz musimy pomnożyć 143 aby wyszła nam liczba z samych 9. 143 × 6993 = 999999 w liczbie 999999 jest sześć dziewiątek więc okres tej liczby ma długość 6 liczb.
+<br><br>
+
+
+`\frac{3}{71500}` = 0,<font color="#ff0f0f">000</font><font color="#2fd1fa">041958</font>041958…
+
+<br><br>
+Na <font color="#ff0f0f">czerwono</font> liczby przed okresem (3 liczby)
+<br>
+Na <font color="#2fd1fa">niebiesko</font> okres liczby (6 liczb)
+
+</body>
+</html>
